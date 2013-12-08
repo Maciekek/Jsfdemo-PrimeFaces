@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml" xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+
+		<h:form>
+			<p:carousel id="basicCarousel" value="#{carBean.allCars}" var="item"
+				itemStyleClass="carItem">
+				<f:facet name="header">  
+            #{msg.car}
+    </f:facet>
+				<h:panelGrid columns="1" style="width:100%" cellpadding="5">
+					<h:outputText value="Name: #{item.name}" />
+
+					<h:outputText value="Mark: #{item.mark}" />
+
+					<h:outputText value="Year of Prod #{item.yop}" />
+					
+					<h:outputText value="Hp #{item.hp}" />
+				</h:panelGrid>
+				<f:facet name="footer">
+
+				</f:facet>
+			</p:carousel>
+
+
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
